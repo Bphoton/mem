@@ -1,0 +1,77 @@
+
+* { /*zero out the entire document // hierarchy of box model: margin -> border -> padding */
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color:#f4f4f4;
+    /* 
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+    */
+    font: normal 16px Arial, Helvetica, sans-serif; /*short cut for the top*/
+    line-height: 1.6em; /*spacing for each line of text*/
+    margin: 0; /*shortcut for top bottom left right: 20px // if top and bottom are the same and left and right are the same: 10px 20px // if all are different: clockwise starting at 12pm*/
+    height: 1px; /*no matter what size you set, content/boxes will set the size of the entire page*/
+}
+.container {
+    width: 80%;
+    margin: auto;
+}
+.clear { /*if boxes are different sizes from left to right, you next box might get stuck: clear both left and right side to start the normal flow of the dom*/
+    clear: both;
+}
+.box1 {
+    color:#555555; /*text*/
+    border: 10px solid white;
+    border-left-style: double; /*just one of many styles*/
+    border-right-style: double;
+    padding: 10px;
+    margin: 10px;
+    font-style: italic;
+    box-sizing: border-box;
+    
+}
+.boxes {
+    float: left; /*default display is block which just goes from top to buttom, but you can float things left or right*/
+    width: 31.1%; /*can be 33.3 percent if you dont use margin and boarder size (just padding) and box-sizing: boarder-box*/
+    box-sizing: border-box; /*mean you want the padding of the box to be included with the width percentage // does not work with margin and border size*/ 
+}
+.box-left {
+    float: left;
+    width: 70%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.box-right {
+    float: right;
+    width: 30%;
+    box-sizing: border-box;
+}
+.pos {
+    height: 500px;
+    border: 2px solid red;
+    border-top-color: red;
+    position: relative; /*relative to the previous div element?*/
+}
+.pos h1{
+    position: absolute; /*absolute to the parent position element*/
+    top: 10px;
+}
+.pos p {
+    position: absolute;
+    top: 50px;
+}
+.my-link {
+    position: fixed; /*even when scrolling the box will remain fix and in sight*/
+    top: 400px;
+}
+
+/* https://www.youtube.com/watch?v=yfoY53QXEnI */
+/* next: web kit
+   flex box: position things easy //same as grid?
+   animations:
+   css less: dynamic styles
+   bootstrap: extention of css
+*/
